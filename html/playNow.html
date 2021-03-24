@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Voxit - Play Now</title>
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="shortcut icon" href="img/logo.png" />
+    <meta name="viewport" content="width=device-width" >
+    <meta name="description" content="Voxit Treasure Hunt">
+</head>
+</head>
+
+<div class="Logo">
+    <img class="logo" border="0" alt="Logo" src="img/logo.png">
+</div>
+
+
+<div class="topnav" id="topnav" style="margin-bottom:5%">
+
+    <button id="home" class="home" onclick="window.location.href='../index.html'">Home</button>
+    <button id="help" class="help">Help</button>
+
+    <div id="Modal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+            <p>Enter your unique nickname and see the available treasure challenges!</span> </p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="MainBox" id="IndexContainer">
+    <h3 class="nicknameText"><u>Your Nickname</u></h3>
+    <form action="javascript:checkName(this);">
+        <input type="text" id="Tname" name="name" placeholder="e.g. Chris" required>
+		<br><br>
+        <button type="proceed" class="home" id="namehelpButton">Proceed</button>
+    </form>
+</div>
+
+<div class="loading" id="loading">
+    <h3 class="challengesLoading" id="challengesLoading">Loading</h3>
+</div>
+
+<div class="wrapper">
+    <div id="displayChallenges" class="Challenges">
+        <h3><u>Treasure Hunt List</u></h3>
+        <ul id="treasureHuntsArray">
+        </ul>
+    </div>
+</div>
+
+<script>
+
+
+    const TH_BASE_URL = "https://codecyprus.org/th/api/";
+
+    let modal = document.getElementById("Modal");
+
+    let helpButton = document.getElementById("help");
+
+    let span = document.getElementsByClassName("close")[0];
+
+    helpButton.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    const params = new URLSearchParams(location.search);
+
+	
+	    function convertMsToMinutes(maxDurationString){
+        let  maxDurationNum = Number(maxDurationString);
+        let m = Math.floor((maxDurationNum / 1000 / 60) << 0)
+        return m + " minutes";
+    }
+    function convertMsToDate(startsOnString){
+        let startsOnNum = Number(startsOnString);
+        let options = {
+            year: 'numeric', month: 'numeric', day: 'numeric',
+        };
+        let date = new Date(startsOnNum);
+        let result = date.toLocaleDateString('en', options); // month/day/year
+        return result;
+    }
+
+    function getCookie(cookieName) {
+        let name = cookieName + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    
+    function checkName() {
+        let plyNicknames = document.getElementById("Tname").value;
+        document.getElementById("IndexContainer").style.display = "none";
+        if ((getCookie("saveGame") === "true") && (getCookie("plyNicknamesCookie") === plyNicknames)) {
+            continueLastGame();
+        }
+        else {
+            /*if not display the THs*/
+            importChall(this);
+            document.getElementById("loading").style.display="inline-block";
+        }
+    }
+
+    
+    function continueLastGame(){
+        let checker = confirm ("You have player already " +getCookie("nameOfGame") +" with the name of ("+getCookie("plyNicknamesCookie") + ")\nPress Ok to go to the last session " + "\nCancel to start a new session with this name.")
+
+        if (checker) {
+            
+            window.location.href="game.html?player="+getCookie("plyNicknamesCookie");
+        }else{
+            const deleteCookies = function(){
+                    document.cookie = 'saveGame=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+                    document.cookie = 'nameOfGame=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+                    document.cookie = 'sessionID=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+                    document.cookie = 'plyNicknamesCookie=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+        };
+            setTimeout(deleteCookies, 10);
+            setTimeout(function(){window.location.href="playAgain.html";},500);
+        }
+    }
+	
+	function importChall() {
+			let plyNicknames;
+
+			if(params.has("restart")){
+				plyNicknames=params.get("plyNicknames");
+			}
+			else{
+				plyNicknames=document.getElementById("Tname").value;
+			}
+
+			fetch(TH_BASE_URL+"list")
+				.then(response => response.json()) 
+				.then(jsonObject => {
+					let today = new Date();
+					document.getElementById("displayChallenges").style.display = "block";
+					document.getElementById("loading").style.display="none";
+										let listHtml = "<ul>";
+					let treasureHuntsArray=jsonObject.treasureHunts; 
+					for(let i=0; i<treasureHuntsArray.length; i++) 
+					{
+						let thDate=new Date(treasureHuntsArray[i].startsOn);
+						if(today >= thDate){
+							console.log("is after today");
+							listHtml +=
+								"<li>" + "<b>" +"<a id='TH' href='game.html?player=" + plyNicknames + "&app=BrainstormQ&treasure-hunt-id=" + treasureHuntsArray[i].uuid
+								+ '&time='+ treasureHuntsArray[i].maxDuration + '&nameOfGame='+ treasureHuntsArray[i].name+"'>" + (i+1) +". "+" " +treasureHuntsArray[i].name +"</a>" + "</b>" +"</li>"
+								+"<li>" + "<b>" + "Starts on: " + "</b>" + convertMsToDate(treasureHuntsArray[i].startsOn) + "</li>"
+								+"<li>" + "<b>" + "Duration: "+ "</b>" + convertMsToMinutes(treasureHuntsArray[i].maxDuration) + "</li>"
+						}else{
+							console.log("is before today");
+							listHtml += 
+								"<li>" + "<b>" +"<a style='opacity: 0.25; pointer-events: none;' id='TH' href='game.html?player=" + plyNicknames + "&app=BrainstormQ&treasure-hunt-id=" + treasureHuntsArray[i].uuid
+								+ '&time='+ treasureHuntsArray[i].maxDuration + '&nameOfGame='+ treasureHuntsArray[i].name+"'>" + (i+1) +". "+" " +treasureHuntsArray[i].name +"</a>" + "</b>" +"</li>"
+								+"<li style='opacity: 0.25'>" + "<b>" + "Starts on: " + "</b>" + convertMsToDate(treasureHuntsArray[i].startsOn) + "</li>"
+								+"<li style='opacity: 0.25'>" + "<b>" + "Duration: "+ "</b>" + convertMsToMinutes(treasureHuntsArray[i].maxDuration) + "</li>"
+						}
+					}
+					listHtml += "</ul>";
+					document.getElementById("displayChallenges").style.display = "inline-block";
+					document.getElementById("treasureHuntsArray").innerHTML = listHtml;
+				});
+		}
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
+
+
+p{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    color: rgba(198, 158, 107, 0.9);
+}
+
+h1{
+    font-family: 'Lexend', sans-serif;
+    text-align: center;
+    color: rgba(198, 158, 107, 0.9);
+    margin-bottom:2%;
+}
+
+h2{
+    font-family: 'Lexend', sans-serif;
+    text-align: center;
+    color: rgba(198, 158, 107, 0.9);
+    margin-bottom:2%;
+}
+
+h3{
+    font-family: 'Lexend', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    color: rgba(198, 158, 107, 0.9);
+    font-size: 20px;
+}
+
+h4{
+    font-family: 'Lexend', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    color: rgba(198, 158, 107, 0.9);
+    font-size: 15px;
+}
+
+ul{
+    font-family: 'Lexend', sans-serif;
+    color: rgba(198, 158, 107, 0.9);
+    width: 100%;
+    display:inline;
+    list-style-type: none;
+    text-align: center;
+}
+
+
+.twitterContainer{
+    text-align: center;
+}
+
+
+.MainBox{
+    display:block;
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: auto;
+}
+
+.TwitterBox{
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+
+.Challenges{
+    display:none;
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    width:auto;
+}
+
+.LBContainer{
+    display:block;
+    background-color: rgba(0,0,0, 0.95);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.scoreContainer{
+    display:block;
+    background-color: rgba(0,0,0, 0.95);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.Logo{
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: auto;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+.GetStartedBtn
+{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    margin-top: 20px;
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-block;
+
+}
+
+.GetStartedBtn:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    margin-left:-5px;
+}
+.logo{
+    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.home{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    font-size:15px;
+}
+
+.skipBtn{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    font-size:20px;
+    margin-top: 15px;
+}
+
+.skipBtn:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.mcqBtns{
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    margin: 10px 10px 10px 25px;
+    display: inline-block;
+}
+
+.mcqBtns:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.questionBtns{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    margin-top: 20px;
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-block;
+}
+
+.questionBtns:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.home:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.help{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    float:right;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    font-size:15px;
+}
+
+.help:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.nicknameText{
+    color: rgba(198, 158, 107, 0.9);
+}
+
+a {
+    color:rgba(198, 158, 107, 0.9);
+    font-family: 'Lexend', sans-serif;
+    font-size: 19px;
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#TH {
+    text-decoration: none;
+}
+
+#TH:hover{
+   color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+
+.modal {
+    color:rgba(198, 158, 107, 0.9);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(198, 158, 107, 0.9);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 80%;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.topnav{
+    margin-bottom:5%;
+}
+
+.appContainer{
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+
+.answer{
+    display:block;
+}
+
+.messagesContainer{
+    display:inline-block;
+    position:absolute;
+    font-size:50px;
+    font-weight:bold;
+    top: 75%;
+    left: 60%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+
+.qrContainer{
+    background-color: rgba(0,0,0, 0.95);
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(198, 158, 107, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.copyBtn{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    float:right;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    font-size:15px;
+}
+
+.copyBtn:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+.refreshContainer{
+    text-align: center;
+}
+
+.refreshBtn{
+    cursor: pointer;
+    background-color: rgba(198, 158, 107, 0.9);
+    padding: .5em;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size:15px;
+}
+
+.viewRank{
+    text-align: center;
+    margin-bottom: 10%;
+}
+.refreshBtn:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1px #777;
+}
+
+
+
+.resultContainer{
+    background-color: rgba(198, 158, 107, 0.9);
+    border-radius: 5px;
+    font-family: 'Lexend', sans-serif;
+    color: rgba(0,0,0, 0.95);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.preview{
+    width:300px;
+    height:250px;
+}
+
+.contentContainer{
+    position:relative;
+    text-align: center;
+}
+
+
+#messagesContainer{
+    text-align: center;
+}
+
+.ChallengesnicknameText
+{
+    position: relative;
+    font-size: 100px;
+    letter-spacing: 0.06em;
+    left:200px;
+    margin-top:0px;
+}
+
+.ViewChallenges
+{
+    position:relative;
+    margin-bottom: 50px;
+    font-size:50px;
+    left:150px;
+}
+
+
+
+
+#buttonHandleList
+{
+    position:absolute;
+    font-size: 50px;
+    top:450px;
+    left:100px;
+    border-radius: 25em;
+    border: 2px solid black;
+}
+
+.treasureHuntsArray
+{
+    font-family: 'Lexend', sans-serif;
+    bottom: 0;
+    width: 100%;
+    display: inline;
+    list-style-type: none;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+.questionMessage{
+    position:relative;
+    font-size: 3rem;
+    font-weight: bold;
+    display:inline;
+    text-align: center;
+}
+
+
+.swal-footer {
+    text-align: center;
+}
+
+ .swal-text {
+     text-align: center;
+ }
+
+
+.notes
+{
+    font-size:50px;
+}
+
+input[type="text"], input[type="number"],input[type="integer"] {
+    width: 80%;
+    max-width: 250px;
+    padding:20px;
+}
+
+.btnsContainer{
+    margin: auto;
+    width: max-content;
+    cursor: pointer;
+}
+
+
+.leaderboardTable {
+
+    font-family: 'Lexend', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    position:absolute;
+    top: 50%;
+    left: 6%;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    font-size: 70px;
+}
+
+.loadingQuestionsM{
+    font-size:70px;
+    margin-left:100px;
+}
+
+
+
+
+
+.nameBtn{
+    position:relative;
+    display:inline-block;
+    font-size:50px;
+    left:55px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 15px 32px;
+    border: 10px solid #D77B1A;
+    background-color: #D77B1A;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+.loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+
+@media only screen and (min-width: 768px){
+
+.TwitterBox{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#twitter-widget-0 {
+    width: 50% !important;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+.shadowed{
+    width:20%;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 35px;
+}
+
+.MainBox{
+    font-size: 30px;
+}
+
+.GetStartedBtn{
+    font-size: 30px;
+}
+
+.home{
+    font-size: 30px;
+
+}
+
+.help{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 30px;
+}
+
+input{
+    font-size: 30px;
+}
+
+a{
+    font-size: 30px;
+}
+
+.contentContainer{
+    font-size: 30px;
+}
+
+.copyBtn{
+    font-size: 30px;
+}
+
+h4{
+    font-size: 25px;
+}
+
+.questionBtns{
+    font-size: 30px;
+}
+
+.skipBtn{
+    font-size: 30px;
+}
+.mcqBtns{
+    font-size: 30px;
+}
+
+td{
+    padding:20px;
+}
+
+.UnitTestBody{
+    font-size: 20px;
+}
+
+
+
+
+}
+@media only screen and (min-width: 1200px){
+
+.TwitterBox{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#twitter-widget-0 {
+    width: 50% !important;
+}
+
+img{
+    width:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo{
+    width:10%;
+}
+
+
+
+.wrapper{
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.home{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.topnav{
+    margin-bottom: 20px;
+}
+
+.help{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.copyBtn{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.questionBtns{
+    font-size: 20px;
+}
+
+.skipBtn{
+    font-size: 20px;
+}
+
+.refreshBtn{
+    font-size: 20px;
+}
+
+.viewRank{
+    margin-bottom: 20px;
+}
+
+
+
+}
+
+
