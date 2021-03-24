@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 
-    
+    <meta charset="UTF-8">
+    <title>Voxit - Home</title>
+    <link rel="stylesheet" href="html/css/styles.css">
+	<link rel="shortcut icon" href="html/img/logo.png" />
+    <meta name="viewport" content="width=device-width" >
+    <meta name="description" content="Voxit Treasure Hunt">
+</head>
+<body>
 
-    <head>
-    <meta charset="UTF-8">  <!-- Setting charset --->
-    <title>Landing Page CO111</title> <!-- Title --->
-    </head>
-
-
-    <body style="background-color: lightskyblue"> <!-- Background page colour--->
-        <h1>CO111 - Team Members:</h1> <!-- Just some text --->
-        <p><b> Chris Christides </b></p>
-        <p><b> Panayiota Panayiotou </b></p>
-        <p><b> Ling Yu Bai </b></p>
-
-
+    <div class="Logo">
+        <img class="logo" border="0" alt="Logo" src="html/img/logo.png">
+    </div>
 
 
-    <!-- Twitter --->
+    <div class="MainBox">
+        
+		<h3><u>Our Goal</u></h3>
+        <p>
+			Our main goal is to create a web application which will be interactive towards the user so they are able to sit and play our own custom treasure hunt game. The players will be looking for real life clues using our API that checks their concurrent location, depending on the location there will be questions and answers that are saved on our end.
+        </p>
+		
+		<h3><u>Our Team</u></h3>
+        <ul>
+            <li>Chris Christides - HTML/JS/CSS Implementation</li>
+            <li>Panayiota Panayiotou - Marketing/PR</li>
+        </ul>	
+		
+        <form method="get" action="html/playNow.html">
+            <button  class="GetStartedBtn">Click To Begin</button>
+        </form>
 
-    <a class="twitter-timeline" href="https://twitter.com/ElteriaGame">Tweets by Chris Christides game.</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+        <br>
+    </div>
 
-    </script>
 
-    <!-- Twitter --->
+    <div class="TwitterBox">
+		<h3><u>Check out our Twitter Page</u></h3>
+        <div class="twitterContainer">
+            <a class="twitter-timeline" data-width="100" data-height="350" data-theme="dark" href="https://twitter.com/voxit3">Tweets by us!</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
 
-    </body>
+
+</body>
 </html>
